@@ -1,8 +1,5 @@
-.Weather-App {
-  max-width: 600px;
-  margin: 30px 0 auto;
-  padding: 20px;
-  border: 1px solid #b4bfce;
+body {
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 h1 {
@@ -27,4 +24,32 @@ li {
   font-size: 16px;
   font-weight: 100;
   line-height: 19px;
+}
+
+.weather-app-wrapper {
+  max-width: 600px;
+  margin: 30px 0 auto;
+}
+.Weather-App {
+  padding: 20px;
+  border: 1px solid #b4bfce;
+}
+
+.wather-tempreture img {
+  margin-right: 10px;
+  height: 84px;
+  width: 84px;
+}
+
+.wather-tempreture strong {
+  color: royalblue;
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.wather-tempreture .units {
+  position: relative;
+  font-size: 16px;
+  top: -34px;
 }
