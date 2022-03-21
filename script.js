@@ -42,11 +42,27 @@ iconElement.setAttribute(
   `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png` );
 iconElement.setAttribute("alt" , response.data.weather[0].description);
 
- console.log(response.data);
+ // console.log(response.data);
 }
-function seach(city){}
+
+
+
+function seach(city){
 let apiKey =  "2bcda0ef514ca396d716955408357744";
-let city = "Oxford";
+//let city = "Oxford";
 let apiUrl =  `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 console.log(apiUrl);
 axios.get(apiUrl).then(displayTempreature);
+}
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityImputElement = document.querySelector(`#city-input`);
+  console.log(cityImputElement.value);
+}
+
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
+
+seach ("Paris");
