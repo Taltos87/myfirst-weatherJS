@@ -2,17 +2,16 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 
 }
-.container  {
+.Weather-App  {
   background-image: url("./download.png");
+  height: 400px;
+  width: 100%;
   position:relative;
-  bottom: 0;
-  right: 0;
-  width: 300px;
-  border: 3px solid #6b2785;
+
 }
 
 h1 {
-  color: blue;
+  color: rgb(70, 63, 152);
   display: block;
   font-family: inherit;
   font-weight: 100;
