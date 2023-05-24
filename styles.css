@@ -56,20 +56,20 @@ span {
   border: 1px solid #b4bfce;
 }
 
-.wather-tempreture img {
+.wather-temperature img {
   margin-right: 10px;
   height: 84px;
   width: 84px;
 }
 
-.wather-tempreture strong {
+.wather-temperature strong {
   color: royalblue;
   font-size: 64px;
   font-weight: 400;
   line-height: 1;
 }
 
-.wather-tempreture .units {
+.wather-temperature .units {
   position: relative;
   font-size: 16px;
   top: -34px;
