@@ -36,7 +36,7 @@ let celsiusTemp = null;
 function displayForecast() {
     let forecastElement = document.querySelector("#forecast");
 
-    forecastElement.innerHTML = "   
+    forecastElement.innerHTML =`    
     <div class="row">
     <div class="col-2">
      <div class="weather-forecast-date">Wed</div> 
@@ -49,7 +49,7 @@ function displayForecast() {
          <span class="weather-forecast-temperature-min"> 12° </span>  
     </div>
 </div>
-</div>";
+</div>`; 
 }
 
 
