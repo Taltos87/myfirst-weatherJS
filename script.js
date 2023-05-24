@@ -30,6 +30,34 @@ celsiusLink.addEventListener("click", showCelsiusTemp);
 
 let celsiusTemp = null;
 
+
+
+
+function displayForecast() {
+    let forecastElement = document.querySelector("#forecast");
+
+    forecastElement.innerHTML = "   
+    <div class="row">
+    <div class="col-2">
+     <div class="weather-forecast-date">Wed</div> 
+     <img
+     src="http://openweathermap.org/img/wn/01d.png"
+     alt=""
+     width="42" />
+     <div class="weather-forecast-temperatures">
+         <span class="weather-forecast-temperature-max"> 18° </span>
+         <span class="weather-forecast-temperature-min"> 12° </span>  
+    </div>
+</div>
+</div>";
+}
+
+
+
+
+
+
+
 function displayTemp(response) {
     let temperatureElement = document.querySelector(`#temperature`);
     let cityElement = document.querySelector(`#city`);
@@ -100,7 +128,8 @@ let form = document.getElementById("search-form");
 form.addEventListener("submit", handleSubmit);
 
 search("London");
-
+  
+displayForecast();
 
 
 
