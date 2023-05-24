@@ -11,7 +11,7 @@ body {
 }
 
 h1 {
-  color: royalblue;
+  color: dodgerblue;
   display: block;
   font-family: inherit;
   font-weight: 100;
@@ -23,7 +23,7 @@ ul {
   margin: 0;
   padding: 0;
 
-  color: dodgerblue;
+  color: navy;
   font-size:medium;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -63,7 +63,7 @@ span {
 }
 
 .wather-temperature strong {
-  color: royalblue;
+  color: dodgerblue;
   font-size: 64px;
   font-weight: 400;
   line-height: 1;
@@ -71,6 +71,6 @@ span {
 
 .wather-temperature .units {
   position: relative;
-  font-size: 16px;
+  font-size: 20px;
   top: -34px;
 }
