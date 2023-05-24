@@ -36,7 +36,7 @@ let celsiusTemp = null;
 function displayForecast() {
     let forecastElement = document.querySelector("#forecast");
     let forecastHTML= `<div class="row">`;
-    let days = ["Thu", "Fri", "Sat", "Sun"];
+    let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue" ];
     days.forEach(function (day) {
 forecastHTML = forecastHTML + `
 <div class="col-2">
