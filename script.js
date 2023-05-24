@@ -22,8 +22,16 @@ function formatDate(timestamp) {
     return `${day} ${hours}: ${minutes}`;
 }
 
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", showFahrenheitTemp);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", showCelsiusTemp);
+
+let celsiusTemp = null;
+
 function displayTemp(response) {
-    let temperatureElement = document.querySelector(`#temperture`);
+    let temperatureElement = document.querySelector(`#temperature`);
     let cityElement = document.querySelector(`#city`);
     let descriptionElement = document.querySelector(`#description`);
     let humidityElement = document.querySelector("#humidity");
@@ -42,6 +50,16 @@ function displayTemp(response) {
         `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
     );
     iconElement.setAttribute("alt", response.data.weather[0].description);
+    
+    
+  celsiusTemp = response.data.main.temp;
+
+  if (fahrenheitLink.classList.contains("active")) {
+    let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
+    temperatureElement.innerHTML = Math.round(fahrenheitTemp);
+  }
+    
+    
     getForecast(response.data.coord);
 }
 
@@ -57,8 +75,34 @@ function search(city) {
     axios.get(apiUrl).then(displayTemp);
 }
 
+function showFahrenheitTemp(event) {
+    event.preventDefault();
+    let temperatureElement = document.querySelector("#temperature");
+    celsiusLink.classList.remove("active");
+    fahrenheitLink.classList.add("active");
+    let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
+    temperatureElement.innerHTML = Math.round(fahrenheitTemp);
+    search(cityInputElement.value); // Call search function to update temperature unit in API call
+  }
+  
+  function showCelsiusTemp(event) {
+    event.preventDefault();
+    celsiusLink.classList.add("active");
+    fahrenheitLink.classList.remove("active");
+    let temperatureElement = document.querySelector("#temperature");
+    temperatureElement.innerHTML = Math.round(celsiusTemp);
+    search(cityInputElement.value); // Call search function to update temperature unit in API call
+  }
+
+
+
 let form = document.getElementById("search-form");
 form.addEventListener("submit", handleSubmit);
+
+
+
+
+
 
 /* Changes:
  - Fixed Typo search
