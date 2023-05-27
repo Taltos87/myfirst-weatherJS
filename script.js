@@ -33,8 +33,7 @@ let celsiusTemp = null;
 
 
 
-function displayForecast(response) {
-    // console.log(response.data.daily); // this is where the error is
+function displayForecast() {
     let forecastElement = document.querySelector("#forecast");
     let forecastHTML= `<div class="row">`;
     let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue" ];
@@ -55,19 +54,13 @@ forecastHTML = forecastHTML + `
  forecastHTML = forecastHTML + `</div>`;
  forecastElement.innerHTML = forecastHTML;
 }
-// getForecast(response.data.coord);
 
-function getForecast(coordinates){
+function getForecast(coordinates) {
     console.log(coordinates);
-    const apiKey = "2bcda0ef514ca396d716955408357744";
-    const apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat={coordinates.lat}&lon={coordinates.lon}&&appid={Apikey}`;
-    console.log(apiUrl);
+    let apiKey = "2bcda0ef514ca396d716955408357744";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(displayForecast);
 }
-
-
-
-
 
 function displayTemp(response) {
     let temperatureElement = document.querySelector(`#temperature`);
@@ -98,21 +91,21 @@ function displayTemp(response) {
     let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
     temperatureElement.innerHTML = Math.round(fahrenheitTemp);
   }
-    
-    
+  getForecast(response.data.coord);
 }
 
-function handleSubmit(event) {
-    event.preventDefault();
-    const cityInputElement = document.querySelector("#city-input");
-    search(cityInputElement.value);
-}
 
 function search(city) {
     const apiKey = "2bcda0ef514ca396d716955408357744";
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(displayTemp);
     // console.log(response.data);
+}
+
+function handleSubmit(event) {
+    event.preventDefault();
+    const cityInputElement = document.querySelector("#city-input");
+    search(cityInputElement.value);
 }
 
 function showFahrenheitTemp(event) {
@@ -144,10 +137,3 @@ search("London");
 displayForecast();
 
 
-
-/* Changes:
- - Fixed Typo search
- - Fixed typo in displayTemp
- - Calling handle submit function before search
- - Calling display temp after axios call
-*/
