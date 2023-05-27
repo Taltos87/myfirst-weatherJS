@@ -33,7 +33,8 @@ let celsiusTemp = null;
 
 
 
-function displayForecast() {
+function displayForecast(response) {
+    // console.log(response.data.daily); // this is where the error is
     let forecastElement = document.querySelector("#forecast");
     let forecastHTML= `<div class="row">`;
     let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue" ];
@@ -54,8 +55,15 @@ forecastHTML = forecastHTML + `
  forecastHTML = forecastHTML + `</div>`;
  forecastElement.innerHTML = forecastHTML;
 }
+// getForecast(response.data.coord);
 
-
+function getForecast(coordinates){
+    console.log(coordinates);
+    const apiKey = "2bcda0ef514ca396d716955408357744";
+    const apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat={coordinates.lat}&lon={coordinates.lon}&&appid={Apikey}`;
+    console.log(apiUrl);
+    axios.get(apiUrl).then(displayForecast);
+}
 
 
 
@@ -69,6 +77,7 @@ function displayTemp(response) {
     let windElement = document.querySelector("#wind");
     let dateElement = document.querySelector(`#date`);
     let iconElement = document.querySelector(`#icon`);
+    console.log(response.data);
 
     temperatureElement.innerHTML = Math.round(response.data.main.temp);
     cityElement.innerHTML = response.data.name;
@@ -79,9 +88,9 @@ function displayTemp(response) {
     iconElement.setAttribute(
         "src",
         `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-    );
-    iconElement.setAttribute("alt", response.data.weather[0].description);
-    
+        );
+        iconElement.setAttribute("alt", response.data.weather[0].description);
+        
     
   celsiusTemp = response.data.main.temp;
 
@@ -91,7 +100,6 @@ function displayTemp(response) {
   }
     
     
-    getForecast(response.data.coord);
 }
 
 function handleSubmit(event) {
@@ -104,6 +112,7 @@ function search(city) {
     const apiKey = "2bcda0ef514ca396d716955408357744";
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(displayTemp);
+    // console.log(response.data);
 }
 
 function showFahrenheitTemp(event) {
