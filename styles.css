@@ -11,7 +11,7 @@ body {
 }
 
 h1 {
-  color: dodgerblue;
+  color: royalblue;
   display: block;
   font-family: inherit;
   font-weight: 100;
@@ -42,7 +42,7 @@ li:first-letter {
   text-transform: capitalize;
 }
 span {
-  color: royalblue;
+  color: navy;
   font-size: 16px;
   font-weight: 100;
   line-height: 19px;
@@ -63,7 +63,7 @@ span {
 }
 
 .wather-temperature strong {
-  color: dodgerblue;
+  color: royalblue;
   font-size: 64px;
   font-weight: 400;
   line-height: 1;
@@ -72,5 +72,10 @@ span {
 .wather-temperature .units .weather-forecast-temperatures {
   position: relative;
   font-size: 20px;
+  top: -34px;
+}
+
+.units{
+  position: relative;
   top: -34px;
 }
