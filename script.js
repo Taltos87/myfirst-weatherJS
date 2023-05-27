@@ -151,7 +151,7 @@ function showFahrenheitTemp(event) {
 let form = document.getElementById("search-form");
 form.addEventListener("submit", handleSubmit);
 
-search("London");
+search("Tapa");
   
 displayForecast();
 
