@@ -3,15 +3,16 @@ body {
 
 }
 .Weather-App  {
-  background-image: url("./download.png");
+  background-image: url("./animefeather.gif");
   height: 400px;
+  background-position: center;
   width: 100%;
   position:relative;
 
 }
 
 h1 {
-  color: royalblue;
+  color: navy;
   display: block;
   font-family: inherit;
   font-weight: 100;
@@ -63,7 +64,7 @@ span {
 }
 
 .wather-temperature strong {
-  color: royalblue;
+  color: navy;
   font-size: 64px;
   font-weight: 400;
   line-height: 1;
@@ -78,4 +79,6 @@ span {
 .units{
   position: relative;
   top: -34px;
+  font-size: large;
+  font-display:bold;
 }
