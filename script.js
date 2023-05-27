@@ -34,6 +34,16 @@ let celsiusTemp = null;
 
 
 function displayForecast() {
+    function displayForecast(response) {
+        console.log(response.data.daily);
+    }
+    
+    // function formatDay(timestamp) {
+    //     let date = new Date(timestamp * 1000);
+    //     let day = date.getDay();
+    //     let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue" ];
+    //     return days[day];
+    // }
     let forecastElement = document.querySelector("#forecast");
     let forecastHTML= `<div class="row">`;
     let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue" ];
