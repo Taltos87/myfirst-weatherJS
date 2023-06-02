@@ -44,8 +44,7 @@ li:first-letter {
 }
 span {
   color: navy;
-  font-size: 18px;
-  font-family: 'Georgia', serif;
+  font-size: 16px;
   font-weight: 100;
   line-height: 19px;
 }
@@ -82,5 +81,4 @@ span {
   top: -34px;
   font-size: large;
   font-display:bold;
-  font-family: Georgia, 'Times New Roman', Times, serif;
 }
