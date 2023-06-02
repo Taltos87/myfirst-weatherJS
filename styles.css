@@ -1,0 +1,84 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+
+}
+.Weather-App  {
+  background-image: url("./animerain.gif");
+  height: 400px;
+  background-position: center;
+  width: 100%;
+  position:relative;
+
+}
+
+h1 {
+  color: navy;
+  display: block;
+  font-family: inherit;
+  font-weight: 100;
+  line-height: 28px;
+  margin-bottom: 0;
+}
+
+ul , weather-forecast-date {
+  margin: 0;
+  padding: 0;
+
+  color: navy;
+  font-size:medium;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  color: rgb (135, 135, 135);
+  font-size: 16px;
+  font-weight: 100;
+  line-height: 19px;
+}
+
+li:first-letter {
+  text-transform: capitalize;
+}
+span {
+  color: navy;
+  font-size: 16px;
+  font-weight: 100;
+  line-height: 19px;
+}
+.weather-app-wrapper {
+  max-width: 600px;
+  margin: 30px 0 auto;
+}
+.Weather-App {
+  padding: 20px;
+  border: 1px solid #b4bfce;
+}
+
+.wather-temperature img {
+  margin-right: 10px;
+  height: 84px;
+  width: 84px;
+}
+
+.wather-temperature strong {
+  color: navy;
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.wather-temperature .units .weather-forecast-temperatures {
+  position: relative;
+  font-size: 20px;
+  top: -34px;
+}
+
+.units{
+  position: relative;
+  top: -34px;
+  font-size: large;
+  font-display:bold;
+}
